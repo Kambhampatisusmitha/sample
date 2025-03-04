@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stream</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #d9ecec;
+            font-family: Arial, sans-serif;
+        }
+        .video-container {
+            width: 80%;
+            aspect-ratio: 16 / 9;
+            background: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+        .video-container img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Real-Time Monitoring</h1>
+    
+    <div class="video-container" id="video-box">
+        <img id="video_feed" src="" alt="Live Video">
+    </div>
+    
+    <div class="controls">
+        <button onclick="startStream()">Start</button>
+        <button onclick="stopStream()">Stop</button>
+    </div>
+
+    <script>
+        function startStream() {
+            document.getElementById("video_feed").src = "/video_feed";
+            document.getElementById("video_feed").style.display = "block";
+        }
+
+        function stopStream() {
+            document.getElementById("video_feed").src = "";
+            document.getElementById("video_feed").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
